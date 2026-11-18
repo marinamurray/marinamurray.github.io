@@ -884,10 +884,11 @@
 .cc-ru{display:none}
 body.lang-ru .cc-en{display:none}
 body.lang-ru .cc-ru{display:inline}
-.cc-link{background:none;border:0;padding:0;font:inherit;font-size:.8rem;color:inherit;text-decoration:underline;cursor:pointer;opacity:.7}
+.cc-link{background:none;border:0;padding:0;font:inherit;font-size:.8rem;color:inherit;text-decoration:underline;cursor:pointer;opacity:.7;margin-right:1.25rem}
+#cc-banner a{color:#0f6e56}
 </style>
 <div id="cc-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
-  <p><span class="cc-en">This site uses Google Analytics cookies to understand how visitors use it. They are only set if you accept.</span><span class="cc-ru">Сайт использует cookies Google Analytics, чтобы понимать, как посетители им пользуются. Они устанавливаются только с вашего согласия.</span></p>
+  <p><span class="cc-en">This site uses Google Analytics cookies to understand how visitors use it. They are only set if you accept. <a href="/privacy.html">Privacy policy</a></span><span class="cc-ru">Сайт использует cookies Google Analytics, чтобы понимать, как посетители им пользуются. Они устанавливаются только с вашего согласия. <a href="/privacy.html">Подробнее</a></span></p>
   <div class="cc-actions">
     <button type="button" id="cc-accept"><span class="cc-en">Accept</span><span class="cc-ru">Принять</span></button>
     <button type="button" id="cc-decline"><span class="cc-en">Decline</span><span class="cc-ru">Отклонить</span></button>
@@ -929,7 +930,10 @@ body.lang-ru .cc-ru{display:inline}
     var w=document.createElement('div'); w.style.marginTop='.5rem';
     var a=document.createElement('button'); a.type='button'; a.className='cc-link';
     a.innerHTML='<span class="cc-en">Cookie settings</span><span class="cc-ru">Настройки cookies</span>';
-    a.onclick=show; w.appendChild(a); f.appendChild(w);
+    a.onclick=show;
+    var p=document.createElement('a'); p.className='cc-link'; p.href='/privacy.html';
+    p.innerHTML='<span class="cc-en">Privacy policy</span><span class="cc-ru">Политика конфиденциальности</span>';
+    w.appendChild(p); w.appendChild(a); f.appendChild(w);
   }
 })();
 </script>
